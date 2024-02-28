@@ -1,40 +1,128 @@
 import React, { useState } from "react";
-import { Container, Row } from "reactstrap";
+import { Container, Row, Card } from "reactstrap";
 import BreadCrumb from "../../../Components/Common/BreadCrumb";
 import DataTable from "../../../Components/Common/DataTable/DataTable";
+import DropdownComponent from "../../../Components/Common/DropdownComponent";
+
 
 function index() {
   const columns = [
     {
       Header: "ID",
-      accessor: "role_name", // Replace with the actual accessor for your data
+      accessor: "id",
     },
     {
-      Header: "Role Description",
-      accessor: "description",
+      Header: "CL PREFIX",
+      accessor: "cl_prefix",
+    },
+    {
+      Header: "CL SUFFIX",
+      accessor: "cl_suffix",
     },
 
     {
-      Header: "Active Status",
+      Header: "INITIALS",
+      accessor: "initials",
+    },
+    {
+      Header: "FIRSTNAME",
+      accessor: "first_name",
+    },
+    {
+      Header: "SURNAME",
+      accessor: "surname",
+    },
+    {
+      Header: "OTHER NAME",
+      accessor: "other_name",
+    },
+    {
+      Header: "ACCOUNT NUMBER",
+      accessor: "account_number",
+    },
+    {
+      Header: "ACTION",
       accessor: "is_active",
       Cell: ({ value }) => (
-        <div className="text-start">
-          <div
-            className="hstack d-flex justify-content-center p-2 w-100 text-start"
-            style={{
-              backgroundColor: value ? "#00d084" : "#f7d5ca",
-              borderRadius: "10px",
-              color: value ? "green" : "#ec255a",
-            }}
-          >
-            {value ? <div>Active</div> : <div>Inactive</div>}
-          </div>
-        </div>
+        <DropdownComponent />
       ),
     },
   ];
 
-  const roles = [{}];
+
+
+  const roles = [
+    {
+      id: 90,
+      cl_prefix: "0000000384879",
+      cl_suffix: "LI",
+      initials: "MR",
+      first_name: "JOT",
+      surname: "JOT",
+      other_name: "JOSEPH",
+      account_number: "JOT",
+    },
+    {
+      id: 90,
+      cl_prefix: "0000000384879",
+      cl_suffix: "LI",
+      initials: "MR",
+      first_name: "JOT",
+      surname: "JOT",
+      other_name: "JOSEPH",
+      account_number: "JOT",
+    },
+    {
+      id: 90,
+      cl_prefix: "0000000384879",
+      cl_suffix: "LI",
+      initials: "MR",
+      first_name: "JOT",
+      surname: "JOT",
+      other_name: "JOSEPH",
+      account_number: "JOT",
+    },
+    {
+      id: 90,
+      cl_prefix: "0000000384879",
+      cl_suffix: "LI",
+      initials: "MR",
+      first_name: "JOT",
+      surname: "JOT",
+      other_name: "JOSEPH",
+      account_number: "JOT",
+    },
+    {
+      id: 90,
+      cl_prefix: "0000000384879",
+      cl_suffix: "LI",
+      initials: "MR",
+      first_name: "JOT",
+      surname: "JOT",
+      other_name: "JOSEPH",
+      account_number: "JOT",
+    },
+    {
+      id: 90,
+      cl_prefix: "0000000384879",
+      cl_suffix: "LI",
+      initials: "MR",
+      first_name: "JOT",
+      surname: "JOT",
+      other_name: "JOSEPH",
+      account_number: "JOT",
+    },
+    {
+      id: 90,
+      cl_prefix: "0000000384879",
+      cl_suffix: "LI",
+      initials: "MR",
+      first_name: "JOT",
+      surname: "JOT",
+      other_name: "JOSEPH",
+      account_number: "JOT",
+    },
+  ];
 
   const [loading, setLoading] = useState(false);
   return (
@@ -47,12 +135,14 @@ function index() {
 
           <div>
             <Row className="dash-nft">
-              <DataTable
+            <Card className="p-3">
+            <DataTable
                 columns={columns}
                 data={roles}
                 useGlobalFilter={true}
                 loading={loading}
               />
+            </Card>
             </Row>
           </div>
         </Container>
