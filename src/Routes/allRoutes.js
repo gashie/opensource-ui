@@ -193,6 +193,7 @@ import Logout from "../pages/Authentication/Logout";
 import Register from "../pages/Authentication/Register";
 
 import Customers from "../pages/Pages/Customers";
+import Advices from "../pages/Pages/Customers/Advices";
 
 //Charts
 // import LineCharts from "../pages/Charts/ApexCharts/LineCharts";
@@ -438,6 +439,7 @@ const authProtectedRoutes = [
   { path: "/profile", component: <UserProfile /> },
 
   { path: "/customers", component: <Customers /> },
+  { path: "/advices", component: <Advices /> },
 
   // this route should be at the end of all other routes
   // eslint-disable-next-line react/display-name

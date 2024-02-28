@@ -144,7 +144,7 @@ const Navdata = () => {
       id: "dashboard",
       label: "Customers",
       icon: "bx bx-user",
-      link: "/#",
+      link: "/customers",
       stateVariables: isDashboard,
       click: function (e) {
         e.preventDefault();
