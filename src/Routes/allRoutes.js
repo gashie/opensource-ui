@@ -192,6 +192,8 @@ import ForgetPasswordPage from "../pages/Authentication/ForgetPassword";
 import Logout from "../pages/Authentication/Logout";
 import Register from "../pages/Authentication/Register";
 
+import Customers from "../pages/Pages/Customers";
+
 //Charts
 // import LineCharts from "../pages/Charts/ApexCharts/LineCharts";
 // import AreaCharts from "../pages/Charts/ApexCharts/AreaCharts";
@@ -220,7 +222,7 @@ import Register from "../pages/Authentication/Register";
 // import NFTLanding from "../pages/Landing/NFTLanding";
 
 // // User Profile
- import UserProfile from "../pages/Authentication/user-profile";
+import UserProfile from "../pages/Authentication/user-profile";
 
 // import FileManager from "../pages/FileManager";
 // import ToDoList from "../pages/ToDo";
@@ -274,7 +276,6 @@ const authProtectedRoutes = [
   // { path: "/apps-job-companies-lists", component: <CompaniesList /> },
   // { path: "/apps-job-categories", component: <JobCategories /> },
   // { path: "/apps-api-key", component: <APIKey /> },
-
 
   //Chat
   // { path: "/apps-chat", component: <Chat /> },
@@ -350,7 +351,6 @@ const authProtectedRoutes = [
 
   // { path: "/charts-chartjs", component: <ChartsJs /> },
   // { path: "/charts-echarts", component: <Echarts /> },
-
 
   // // Base Ui
   // { path: "/ui-alerts", component: <UiAlerts /> },
@@ -437,6 +437,8 @@ const authProtectedRoutes = [
   //User Profile
   { path: "/profile", component: <UserProfile /> },
 
+  { path: "/customers", component: <Customers /> },
+
   // this route should be at the end of all other routes
   // eslint-disable-next-line react/display-name
   {
@@ -483,7 +485,6 @@ const publicRoutes = [
   // { path: "/auth-pass-change-basic", component: <BasicPasswCreate /> },
   // { path: "/auth-pass-change-cover", component: <CoverPasswCreate /> },
   // { path: "/auth-offline", component: <Offlinepage /> },
-
 ];
 
 export { authProtectedRoutes, publicRoutes };
