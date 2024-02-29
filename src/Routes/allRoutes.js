@@ -224,6 +224,7 @@ import Advices from "../pages/Pages/Customers/Advices";
 
 // // User Profile
 import UserProfile from "../pages/Authentication/user-profile";
+import Invoice from "../pages/Pages/Customers/Invoice";
 
 // import FileManager from "../pages/FileManager";
 // import ToDoList from "../pages/ToDo";
@@ -440,6 +441,8 @@ const authProtectedRoutes = [
 
   { path: "/customers", component: <Customers /> },
   { path: "/advices", component: <Advices /> },
+  { path: "/invoice", component: <Invoice /> },
+
 
   // this route should be at the end of all other routes
   // eslint-disable-next-line react/display-name

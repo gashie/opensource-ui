@@ -205,6 +205,7 @@
     height: 14px;
     position: relative;
     cursor: pointer;
+    color: white;
     display: inline-block;
 
     span {
@@ -216,19 +217,23 @@
         height: 2px;
         display: block;
         left: 0px;
+        color: white;
 
         &:nth-child(1) {
             top: 0;
             width: 80%;
+            color: white;
         }
 
         &:nth-child(2) {
             top: 6px;
+            color: white;
         }
 
         &:nth-child(3) {
             bottom: 0;
             width: 60%;
+            color: white;
         }
     }
 
@@ -237,6 +242,7 @@
 
             &:nth-child(1) {
                 top: -1px;
+                color: white;
             }
 
             &:nth-child(3) {
