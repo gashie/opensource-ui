@@ -431,4 +431,4 @@ export const deleteTasks = (card) =>
 //tbills
 export const getTbillInvoice = () => api.create(url.GET_TBILL_INVOICE);
 export const printInvoice = () => api.create(url.PRINT_INVOICE);
-export const searchCustomer = () => api.create(url.SEARCH_CUSTOMER)
+export const searchCustomer = (id) => api.create(url.SEARCH_CUSTOMER, id)

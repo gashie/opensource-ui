@@ -3,29 +3,14 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 //Include Both Helper File with needed methods
-import {
-  getTbillInvoice as getInvoicesApi,
-  printInvoice as printInvoiceApi,
-} from "../../../helpers/fakebackend_helper";
+import { searchCustomer as searchCustomerAPI } from "../../../helpers/fakebackend_helper";
 
-export const getTbillInvoices = createAsyncThunk(
-  "invoice/getTbillInvoices",
+export const searchCustomers = createAsyncThunk(
+  "customers/searchCustomer",
   async () => {
     try {
-      const response = getInvoicesApi();
+      const response = searchCustomerAPI();
 
-      return response;
-    } catch (error) {
-      return error;
-    }
-  }
-);
-
-export const printInvoice = createAsyncThunk(
-  "invoice/printInvoice",
-  async () => {
-    try {
-      const response = printInvoiceApi();
       return response;
     } catch (error) {
       return error;

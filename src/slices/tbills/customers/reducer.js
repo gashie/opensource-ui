@@ -1,44 +1,34 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getTbillInvoices, printInvoice } from "./thunk";
+import {  searchCustomers } from "./thunk";
 export const initialState = {
-  invoices: [],
-  print: [],
+  customers: [],
   error: {},
-  adviceLoading: true,
-  printLoading: true,
+  customersLoading: false,
 };
 
-const TbillsInvoiceSlice = createSlice({
-  name: "TbillsInvoiceSlice",
+const CustomerSlice = createSlice({
+  name: "CustomerSlice",
   initialState,
   reducer: {},
   extraReducers: (builder) => {
-    builder.addCase(getTbillInvoices.fulfilled, (state, action) => {
-      state.invoices = action.payload.data;
-      state.isInvoiceCreated = false;
-      state.isInvoiceSuccess = true;
-      state.adviceLoading = false;
+    builder.addCase(searchCustomers.fulfilled, (state, action) => {
+      state.customers = action.payload.data;
+
+      state.isSearchSuccess = true;
+      state.customersLoading = false;
     });
-    builder.addCase(getTbillInvoices.rejected, (state, action) => {
+    builder.addCase(searchCustomers.rejected, (state, action) => {
       state.error = action.payload.error || null;
-      state.isInvoiceCreated = false;
-      state.isInvoiceSuccess = false;
-      state.adviceLoading = false;
+      state.isSearchSuccess = false;
+      state.customersLoading = false;
     });
 
-    builder.addCase(printInvoice.fulfilled, (state, action) => {
-      state.print = action.payload.data;
-      state.isPrintSuccess = true;
-
-      state.printLoading = false;
+    builder.addCase(searchCustomers.pending, (state, action) => {
+     
+      state.isSearchSuccess = false;
+      state.customersLoading = true;
     });
 
-    builder.addCase(printInvoice.rejected, (state, action) => {
-      state.error = action.payload.error || null;
-      state.isPrintSuccess = true;
-
-      state.printLoading = false;
-    });
     // builder.addCase(addNewInvoice.fulfilled, (state, action) => {
     //   state.invoices.push(action.payload);
     //   state.isInvoiceCreated = true;
@@ -67,4 +57,4 @@ const TbillsInvoiceSlice = createSlice({
   },
 });
 
-export default TbillsInvoiceSlice.reducer;
+export default CustomerSlice.reducer;

@@ -103,18 +103,20 @@ const DataTable = ({ columns, data, colHight, length, loading, extra }) => {
             </span>{" "}
             <div>enteries</div>{" "}
           </div>
-          <div>
-            <Input
-              type="text"
-              value={searchText}
-              onChange={(e) => {
-                setSearchText(e.target.value);
-                setGlobalFilter(e.target.value);
-              }}
-              placeholder="Search..."
-              className="mb-4 p-3"
-              style={{ color: "black" }}
-            />
+          <div className="d-flex  justify-content-even gap-2">
+            <div className="mt-2">Search</div>
+            <div>
+              <Input
+                type="text"
+                value={searchText}
+                onChange={(e) => {
+                  setSearchText(e.target.value);
+                  setGlobalFilter(e.target.value);
+                }}
+                className="mb-4 "
+                style={{ color: "black" }}
+              />
+            </div>
           </div>
         </div>
         <table
@@ -169,8 +171,10 @@ const DataTable = ({ columns, data, colHight, length, loading, extra }) => {
           </tbody>
         </table>
 
-        {length === 0 ? (
-          <div className="d-flex justify-content-center mt-5">No Data</div>
+        {data?.length === 0 ? (
+          <div className="d-flex justify-content-center mt-5 fw-bolder">
+            No Data avialable in table
+          </div>
         ) : (
           ""
         )}

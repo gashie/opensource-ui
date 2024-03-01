@@ -69,3 +69,4 @@ export * from "./apiKey/thunk";
 
 // tbills
 export * from './tbills/invoice/thunk'
+export * from './tbills/customers/thunk'

@@ -71,6 +71,7 @@ import APIKeyReducer from "./apiKey/reducer";
 
 //tbills
 import TbillsInvoiceReducer from "./tbills/invoice/reducer";
+import SearchCustomersReducer from "./tbills/customers/reducer";
 
 const rootReducer = combineReducers({
   Layout: LayoutReducer,
@@ -101,6 +102,7 @@ const rootReducer = combineReducers({
   APIKey: APIKeyReducer,
   // tbills
   TbillsInvoice: TbillsInvoiceReducer,
+  SearchCustomers: SearchCustomersReducer,
 });
 
 export default rootReducer;
