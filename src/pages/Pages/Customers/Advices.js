@@ -1,10 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Card, Button } from "reactstrap";
 import BreadCrumb from "../../../Components/Common/BreadCrumb";
 import DataTable from "../../../Components/Common/DataTable/DataTable";
 import DropdownComponent from "../../../Components/Common/DropdownComponent";
 
+import { getTbillInvoices } from "../../../slices/thunks";
+import { useDispatch, useSelector } from "react-redux";
+
 function Advices() {
+  const { advices, loading } = useSelector((state) => ({
+    advices: state.TbillsInvoice.invoices,
+    loading: state.TbillsInvoice.adviceLoading,
+  }));
+
   const columns = [
     {
       Header: "ID",
@@ -12,12 +20,12 @@ function Advices() {
     },
     {
       Header: "CL PREFIX",
-      accessor: "cl_prefix",
+      accessor: "clientprefix",
     },
 
     {
       Header: "SHORT NAME",
-      accessor: "short_name",
+      accessor: "shortname",
     },
     {
       Header: "TENDERNO",
@@ -25,7 +33,7 @@ function Advices() {
     },
     {
       Header: "MATRIUTY VALUE",
-      accessor: "maturity_value",
+      accessor: "maturityvalue",
     },
 
     // {
@@ -36,6 +44,10 @@ function Advices() {
     //   ),
     // },
   ];
+
+
+
+
 
   const roles = [
     {
@@ -128,7 +140,16 @@ function Advices() {
     },
   ];
 
-  const [loading, setLoading] = useState(false);
+
+
+  const dispatch = useDispatch();
+
+  console.log(advices);
+
+  useEffect(() => {
+    dispatch(getTbillInvoices());
+  }, [dispatch]);
+
   return (
     <>
       <div className="page-content">
@@ -170,7 +191,7 @@ function Advices() {
                 </Row>
                 <DataTable
                   columns={columns}
-                  data={roles}
+                  data={advices}
                   useGlobalFilter={true}
                   loading={loading}
                 />

@@ -1,4 +1,4 @@
-const url = '/api/v1/opensource'
+const url = "/api/v1/opensource";
 
 //REGISTER
 export const POST_FAKE_REGISTER = "/auth/signup";
@@ -112,7 +112,8 @@ export const GET_MONTHLY_DATA = "/monthly-data";
 // Audiences Metrics
 export const GET_ALLAUDIENCESMETRICS_DATA = "/allAudiencesMetrics-data";
 export const GET_MONTHLYAUDIENCESMETRICS_DATA = "/monthlyAudiencesMetrics-data";
-export const GET_HALFYEARLYAUDIENCESMETRICS_DATA = "/halfyearlyAudiencesMetrics-data";
+export const GET_HALFYEARLYAUDIENCESMETRICS_DATA =
+  "/halfyearlyAudiencesMetrics-data";
 export const GET_YEARLYAUDIENCESMETRICS_DATA = "/yearlyAudiencesMetrics-data";
 
 // Users by Device
@@ -234,6 +235,7 @@ export const ADD_TASKS = "/add/tasks";
 export const UPDATE_TASKS = "/update/tasks";
 export const DELETE_TASKS = "/delete/tasks";
 
-
 //tbills api
-export const GET_TBILL_INVOICE = `${url}/view_invoice`
+export const GET_TBILL_INVOICE = `${url}/view_invoice`;
+export const PRINT_INVOICE = `${url}/print_invoice`;
+export const SEARCH_CUSTOMER = `${url}/search_customer`;
