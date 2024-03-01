@@ -122,6 +122,56 @@ function index() {
       other_name: "JOSEPH",
       account_number: "JOT",
     },
+    {
+      id: 90,
+      cl_prefix: "0000000384879",
+      cl_suffix: "LI",
+      initials: "MR",
+      first_name: "JOT",
+      surname: "JOT",
+      other_name: "JOSEPH",
+      account_number: "JOT",
+    },
+    {
+      id: 90,
+      cl_prefix: "0000000384879",
+      cl_suffix: "LI",
+      initials: "MR",
+      first_name: "JOT",
+      surname: "JOT",
+      other_name: "JOSEPH",
+      account_number: "JOT",
+    },
+    {
+      id: 90,
+      cl_prefix: "0000000384879",
+      cl_suffix: "LI",
+      initials: "MR",
+      first_name: "JOT",
+      surname: "JOT",
+      other_name: "JOSEPH",
+      account_number: "JOT",
+    },
+    {
+      id: 90,
+      cl_prefix: "0000000384879",
+      cl_suffix: "LI",
+      initials: "MR",
+      first_name: "JOT",
+      surname: "JOT",
+      other_name: "JOSEPH",
+      account_number: "JOT",
+    },
+    {
+      id: 90,
+      cl_prefix: "0000000384879",
+      cl_suffix: "LI",
+      initials: "MR",
+      first_name: "JOT",
+      surname: "JOT",
+      other_name: "JOSEPH",
+      account_number: "JOT",
+    },
   ];
 
   const [loading, setLoading] = useState(false);
@@ -141,6 +191,7 @@ function index() {
                 data={roles}
                 useGlobalFilter={true}
                 loading={loading}
+                extra={true}
               />
             </Card>
             </Row>

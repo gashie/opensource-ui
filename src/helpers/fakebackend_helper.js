@@ -368,3 +368,7 @@ export const getTasks = () => api.get(url.GET_TASKS);
 export const addNewTasks = (card) => api.create(url.ADD_TASKS, card)
 export const updateTasks = (card) => api.put(url.UPDATE_TASKS, card)
 export const deleteTasks = (card) => api.delete(url.DELETE_TASKS, { headers: {card} })
+
+
+//tbills 
+export const getTbillInvoice = () => api.create(url.GET_TBILL_INVOICE)

@@ -9,7 +9,7 @@ import {
 import { Input, Button } from "reactstrap";
 import SidebarLoader from "../SkeletonLoader";
 
-const DataTable = ({ columns, data, colHight, length, loading }) => {
+const DataTable = ({ columns, data, colHight, length, loading, extra }) => {
   const [searchText, setSearchText] = useState("");
 
   const tableInstance = useTable(
@@ -46,9 +46,10 @@ const DataTable = ({ columns, data, colHight, length, loading }) => {
   const { globalFilter, pageIndex, pageSize } = state;
   const filteredData = globalFilter
     ? data?.filter((row) =>
-        Object.values(row).some((cell) =>
-          cell !== null &&
-          cell.toString().toLowerCase().includes(globalFilter.toLowerCase())
+        Object.values(row).some(
+          (cell) =>
+            cell !== null &&
+            cell.toString().toLowerCase().includes(globalFilter.toLowerCase())
         )
       )
     : data;
@@ -59,17 +60,63 @@ const DataTable = ({ columns, data, colHight, length, loading }) => {
         className="table-responsive"
         style={{ color: "black", backgroundColor: "transparent" }}
       >
-        <Input
-          type="text"
-          value={searchText}
-          onChange={(e) => {
-            setSearchText(e.target.value);
-            setGlobalFilter(e.target.value);
-          }}
-          placeholder="Search..."
-          className="mb-4"
-          style={{ color: "black" }}
-        />
+        <div className="mb-5 mt-4" style={{ display: extra ? "" : "none" }}>
+          <h5 className="fw-bolder"> Search CSD NO OR ACCOUNT NUMBER</h5>
+          <p className="fw-bolder text-muted">Type below ...</p>
+          <Input
+            type="text"
+            value={searchText}
+            onChange={(e) => {
+              setSearchText(e.target.value);
+              setGlobalFilter(e.target.value);
+            }}
+            placeholder="Search..."
+            className="mb-4 p-3 "
+            style={{ color: "black", width: "70%" }}
+          />
+
+          <div className="mt-4 mb-5">
+            <hr style={{ border: "1px solid #e0e0e0" }} className="mb-3 mt-3" />
+          </div>
+        </div>
+
+        <div className="d-flex justify-content-between">
+          <div className="d-flex align-items-center gap-2">
+            <div>Showing</div>{" "}
+            <span>
+              <Input
+                value={pageSize}
+                type="select"
+                style={{ width: "75px" }}
+                onChange={(e) => {
+                  const newSize = parseInt(e.target.value);
+                  setPageSize(newSize);
+                  tableInstance.setPageSize(newSize);
+                }}
+              >
+                {[10, 20, 30, 40, 50].map((size) => (
+                  <option key={size} value={size}>
+                    {size}
+                  </option>
+                ))}
+              </Input>{" "}
+            </span>{" "}
+            <div>enteries</div>{" "}
+          </div>
+          <div>
+            <Input
+              type="text"
+              value={searchText}
+              onChange={(e) => {
+                setSearchText(e.target.value);
+                setGlobalFilter(e.target.value);
+              }}
+              placeholder="Search..."
+              className="mb-4 p-3"
+              style={{ color: "black" }}
+            />
+          </div>
+        </div>
         <table
           {...getTableProps()}
           className="table align-middle table-hover dataTable"
@@ -141,7 +188,7 @@ const DataTable = ({ columns, data, colHight, length, loading }) => {
             onClick={() => previousPage()}
             disabled={!canPreviousPage}
             className="me-2"
-            style={{backgroundColor: 'orange', border: 'none'}}
+            style={{ backgroundColor: "orange", border: "none" }}
           >
             Previous
           </Button>
@@ -149,7 +196,7 @@ const DataTable = ({ columns, data, colHight, length, loading }) => {
             onClick={() => nextPage()}
             disabled={!canNextPage}
             className="me-2"
-            style={{backgroundColor: 'orange', border: 'none'}}
+            style={{ backgroundColor: "orange", border: "none" }}
           >
             Next
           </Button>

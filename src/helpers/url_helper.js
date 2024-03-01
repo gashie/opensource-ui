@@ -1,3 +1,5 @@
+const url = '/api/v1/opensource'
+
 //REGISTER
 export const POST_FAKE_REGISTER = "/auth/signup";
 
@@ -231,3 +233,7 @@ export const GET_TASKS = "/apps/tasks";
 export const ADD_TASKS = "/add/tasks";
 export const UPDATE_TASKS = "/update/tasks";
 export const DELETE_TASKS = "/delete/tasks";
+
+
+//tbills api
+export const GET_TBILL_INVOICE = `${url}/view_invoice`

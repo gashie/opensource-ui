@@ -48,9 +48,9 @@ import { Navigate } from "react-router-dom";
 // import CrmLeads from "../pages/Crm/CrmLeads/index";
 
 // //Invoices
-// import InvoiceList from "../pages/Invoices/InvoiceList";
-// import InvoiceCreate from "../pages/Invoices/InvoiceCreate";
-// import InvoiceDetails from "../pages/Invoices/InvoiceDetails";
+import InvoiceList from "../pages/Invoices/InvoiceList";
+import InvoiceCreate from "../pages/Invoices/InvoiceCreate";
+import InvoiceDetails from "../pages/Invoices/InvoiceDetails";
 
 // // Support Tickets
 // import ListView from '../pages/SupportTickets/ListView';
@@ -304,9 +304,9 @@ const authProtectedRoutes = [
   // { path: "/apps-crm-leads", component: <CrmLeads /> },
 
   // //Invoices
-  // { path: "/apps-invoices-list", component: <InvoiceList /> },
-  // { path: "/apps-invoices-details", component: <InvoiceDetails /> },
-  // { path: "/apps-invoices-create", component: <InvoiceCreate /> },
+  { path: "/apps-invoices-list", component: <InvoiceList /> },
+  { path: "/apps-invoices-details", component: <InvoiceDetails /> },
+  { path: "/apps-invoices-create", component: <InvoiceCreate /> },
 
   // //Supports Tickets
   // { path: "/apps-tickets-list", component: <ListView /> },
@@ -442,7 +442,6 @@ const authProtectedRoutes = [
   { path: "/customers", component: <Customers /> },
   { path: "/advices", component: <Advices /> },
   { path: "/invoice", component: <Invoice /> },
-
 
   // this route should be at the end of all other routes
   // eslint-disable-next-line react/display-name
